@@ -25,42 +25,42 @@
 <t tx="amd.20160315124000.1">@language python
 @tabwidth -4
 @others
-"This would create first object of Employee class"
-emp1 = Employee("Zara", 2000)
-"This would create second object of Employee class"
-emp2 = Employee("Manni", 5000)
+"開始利用僱員物件建立案例"
+僱員1 = 僱員("王一名", 55000)
+"建立另外一位僱員"
+僱員2 = 僱員("林人二", 65000)
 
-emp1.displayEmployee()
-emp2.displayEmployee()
+僱員1.列出基本資料()
+僱員2.列出基本資料()
 try:
-    g.es("Total Employee %d" % Employee.empCount)
+    g.es("目前為止, 有 %d 位僱員" % 僱員.人員總數)
 except:
-    print("Total Employee %d" % Employee.empCount)
+    print("目前為止, 有 %d 位僱員" % 僱員.人員總數)
 </t>
-<t tx="amd.20160315141258.2">class Employee:
-    'Common base class for all employees'
-    empCount = 0
+<t tx="amd.20160315141258.2">class 僱員:
+    '僱員物件'
+    人員總數 = 0
     
     @others
 </t>
-<t tx="amd.20160315141258.3">def __init__(self, name, salary):
-    self.name = name
-    self.salary = salary
-    Employee.empCount += 1
+<t tx="amd.20160315141258.3">def __init__(self, 職稱, 薪水):
+    self.職稱 = 職稱
+    self.薪水 = 薪水
+    僱員.人員總數 += 1
 
 </t>
-<t tx="amd.20160315141258.4">def displayCount(self):
+<t tx="amd.20160315141258.4">def 列出個數(self):
     try:
-        g.es("Total Employee %d" % Employee.empCount)
+        g.es("總共有人員 %d" % 僱員.人員總數)
     except:
-        print("Total Employee %d" % Employee.empCount)
+        print("總共有人員 %d" % 僱員.人員總數)
 
 </t>
-<t tx="amd.20160315141258.5">def displayEmployee(self):
+<t tx="amd.20160315141258.5">def 列出基本資料(self):
     try:
-        g.es("Name : ", self.name,  ", Salary: ", self.salary)
+        g.es("職稱 : ", self.職稱,  ", 薪水: ", self.薪水)
     except:
-        print("Name : ", self.name,  ", Salary: ", self.salary)
+        print("職稱 : ", self.職稱,  ", 薪水: ", self.薪水)
   
 </t>
 <t tx="amd.20160315141630.1">大綱與節點
